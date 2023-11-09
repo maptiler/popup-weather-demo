@@ -1,7 +1,7 @@
 
 .popup {
   position: absolute;
-  /* pointer-events: none; */
+  pointer-events: none;
   color: #000;
   line-height: 12px;
   box-shadow: #00000040 0px 2px 10px;
