@@ -1,0 +1,21 @@
+{
+  "name": "popup-weather-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.8"
+  },
+  "dependencies": {
+    "@maptiler/sdk": "^1.2.0",
+    "@maptiler/weather": "file:../maptiler-weather-js/maptiler-weather-1.1.1.tgz",
+    "crepuscule": "^1.0.0",
+    "suncalc": "^1.9.0"
+  }
+}
