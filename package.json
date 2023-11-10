@@ -9,12 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/suncalc": "^1.9.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.8"
   },
   "dependencies": {
     "@maptiler/sdk": "^1.2.0",
-    "@maptiler/weather": "file:../maptiler-weather-js/maptiler-weather-1.1.1.tgz",
+    "@maptiler/weather": "^1.1.2",
     "crepuscule": "^1.0.0",
     "suncalc": "^1.9.0"
   }

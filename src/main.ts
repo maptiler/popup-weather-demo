@@ -1,6 +1,6 @@
-import { config, Map, MapStyle } from "@maptiler/sdk";
+import { Crepuscule } from "crepuscule";
+import { config, Map, StyleSpecification } from "@maptiler/sdk";
 import "@maptiler/sdk/style.css";
-
 import {
   PrecipitationLayer,
   TemperatureLayer,
@@ -8,11 +8,10 @@ import {
   RadarLayer,
   ColorRamp,
 } from "@maptiler/weather";
-
 import './style.css'
 import { PopupBase, PopupManager } from "./popupmanager";
 import { makePopup, updatePopupDiv } from "./popupmaker";
-import { Crepuscule } from "crepuscule";
+import CustomTopoStyle from "./style-topo-early-labels.json";
 
 
 (async () => {
@@ -20,17 +19,18 @@ import { Crepuscule } from "crepuscule";
   if (!appContainer) return;
 
   // Configuring the SDK with MapTiler API key 
-  config.apiKey = "PhsGJ2SdW2MhmzzsT8zU";
+  config.apiKey = "dur4cHJc9CiBxzv0S6Kh";
 
   // Instanciating the map
   const map = new Map({
     container: appContainer,
-    style: MapStyle.TOPO,
+    style: CustomTopoStyle as StyleSpecification,
     hash: true,
     maptilerLogo: true,
   });
 
-  const crep = new Crepuscule(map, {opacity: 0.3});
+  // Adding the sunlight layer from Crepuscule
+  new Crepuscule(map, {opacity: 0.3});
 
   // Waiting that the map is "loaded"
   // (this is equivalent to putting the rest of the code the "load" event callback)
@@ -101,8 +101,6 @@ import { Crepuscule } from "crepuscule";
       popupContainer.appendChild(popupDiv);
     });
   }
-
-  
 
   // The "idle" event is triggered every second because of the particle layer being refreshed,
   // even though their is no new data loaded, so this approach proved to be the best for this scenario
