@@ -65,8 +65,8 @@ import CustomTopoStyle from "./style-topo-early-labels.json";
   const popupManager = new PopupManager(map, {
     layers: ["City labels", "Place labels", "Town labels", "Village labels"],
     classes: ["city", "village", "town"],
-    popupSize: [140, 70],
-    popupAnchor: "top",
+    popupSize: [40, 70],
+    popupAnchor: "center",
   });
   
   // Creating the weather layers...
