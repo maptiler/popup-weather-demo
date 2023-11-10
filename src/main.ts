@@ -49,6 +49,7 @@ import CustomTopoStyle from "./style-topo-early-labels.json";
     style: CustomTopoStyle as StyleSpecification,
     hash: true,
     maptilerLogo: true,
+    geolocate: true,
   });
 
   // Adding the sunlight layer from Crepuscule
