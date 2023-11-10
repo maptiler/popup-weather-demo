@@ -15,11 +15,33 @@ import CustomTopoStyle from "./style-topo-early-labels.json";
 
 
 (async () => {
+  const pageURL = new URL(window.location.href)
+  let apiKey = pageURL.searchParams.get("key");
+
+  // testing the API key and asking for one if not provided
+  while (true) {
+    const testURL = `https://api.maptiler.com/tiles/v3/tiles.json?key=${apiKey}`;
+    const testResponse = await fetch(testURL);
+    
+    if (!testResponse.ok) {
+      apiKey = prompt("The MapTiler API key is missing or invalid.\nPlease add provide it below:");
+    } else {
+      break;
+    }
+  }
+
+  if (!apiKey) {
+    return;
+  }
+
+  pageURL.searchParams.set("key", apiKey);
+  window.history.replaceState(null, "", pageURL.href);
+  
   const appContainer = document.getElementById("app");
   if (!appContainer) return;
 
   // Configuring the SDK with MapTiler API key 
-  config.apiKey = "dur4cHJc9CiBxzv0S6Kh";
+  config.apiKey = apiKey;
 
   // Instanciating the map
   const map = new Map({
