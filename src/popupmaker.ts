@@ -32,7 +32,7 @@ export function makePopup(
   const temperatureDeg = temperatureData?.value || 0;
   const temperature = temperatureData?.value.toFixed(1) as string;
 
-  const sunPosition = suncalc.getPosition(date, lonLat[1], lonLat[0]);
+  const sunPosition = suncalc.getPosition(date, lonLat[1], lonLat[0]); 
 
   if (sunPosition.altitude < 0) {
     mainWeatherIconURL += "night-";
