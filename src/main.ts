@@ -24,7 +24,7 @@ import CustomTopoStyle from "./style-topo-early-labels.json";
     const testResponse = await fetch(testURL);
     
     if (!testResponse.ok) {
-      apiKey = prompt("The MapTiler API key is missing or invalid.\nPlease add provide it below:");
+      apiKey = prompt("The MapTiler API key is missing or invalid.\nPlease provide it below:");
     } else {
       break;
     }
