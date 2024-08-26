@@ -1,3 +1,8 @@
+> 🚨 This repo is deprecated 🚨  
+> ➡️ This was turned into an actual MapTiler SDK plugin [Marker Layout](https://github.com/maptiler/maptiler-marker-layout) ⬅️
+
+---
+
 # Weather Popup App
 ![](images/screenshot.png)
 
